@@ -14,24 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.shortcuts import render
+from django.urls import path,include
 
-def index(request):
-    return render(request,'index.html')
-def staff(request):
-    return render(request,'staff.html')
-def product(request):
-    return render(request,'products.html')
-def order(request):
-    return render(request,'order.html')
-def profile(request):
-    return render(request,'profile.html')
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name="index"),
-    path('staff/',staff,name="staff"),
-    path('products/',product,name="product"),
-    path('order/',order,name="order"),
-    path('profile/',profile,name="profile"),
+    path('',include("dashboard.urls")),
+    # path('profile/',profile,name="profile"),
 ]

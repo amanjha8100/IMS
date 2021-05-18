@@ -1,23 +1,8 @@
-{% extends 'main.html' %}
-
-{% block css %}
-<style>
-    body{
-        background-color: rgb(230, 227,227);
-    }
-    .my-card:hover{
-        transform: scale(1.1);
-        transition: 0.2s ease-in-out;
-    }
-</style>
-{% endblock %}
-
-{% block content %}
 <div class="container">
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header bg-info text-white">
+                <div class="card-header bg-dark text-white">
                     Information
                 </div>
                 <div class="card-body">
@@ -29,13 +14,13 @@
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-info text-white">
+                <div class="card-header bg-dark text-white">
                     Statistics
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <a class="text-decoration-none text-dark" href="">
+                            <a class="text-decoration-none text-dark" href="{% url 'staff' %}">
                                 <div class="card my-card shadow text-center p-3">
                                     <h4>Staff <i class="fa fa-users"></i></h4>
                                     <h3>4</h3>
@@ -43,15 +28,15 @@
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a class="text-decoration-none text-dark" href="">
+                            <a class="text-decoration-none text-dark" href="{% url 'product' %}">
                                 <div class="card my-card shadow text-center p-3">
-                                    <h4>Produts <i class="fa fa-square"></i></h4>
+                                    <h4>Produts <i class="fa fa-archive"></i></h4>
                                     <h3>4</h3>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a class="text-decoration-none text-dark" href="">
+                            <a class="text-decoration-none text-dark" href="{% url 'order' %}">
                                 <div class="card my-card shadow text-center p-3">
                                     <h4>Orders <i class="fa fa-truck"></i></h4>
                                     <h3>4</h3>
@@ -64,36 +49,3 @@
         </div>
     </div>
 </div>
-
-<!--Tables-->
-<div class="container">
-    <div class="row my-4">
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
-            <table class="table bg-white table-responsive-sm">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Products</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Order by</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>aman</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-    </div>
-</div>
-<!--end table-->
-
-
-{% endblock %}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>To Do App</title>
+        <title>{% block title %} {% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {% load static %}
@@ -30,6 +30,15 @@
         <!--Chatrjs-->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 
+        <style>
+          body{
+              background-color: rgb(230, 227,227);
+          }
+          .my-card:hover{
+              transform: scale(1.1);
+              transition: 0.2s ease-in-out;
+          }
+        </style>
         {% block css %}
         {% endblock %}
       </head>
@@ -37,14 +46,14 @@
         <div class="main-section">
             <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
                 <div class="container">
-                  <a class="navbar-brand" href="{% url 'index' %}">To-Do-App</a>
+                  <a class="navbar-brand" href="{% url 'index' %}">Inventory</a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span> Menu
                   </button>
                   <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="https://github.com/amanjha8100" target="_blank" class="nav-link icon d-flex align-items-center"><i class="ion-logo-github"></i><span class="d-lg-none ml-2">GitHub</span></a></li>
-                        <li class="nav-item"><a href="{% url 'index' %}" class="nav-link icon d-flex align-items-center"><i>Home</i><span class="d-lg-none ml-2"></span></a></li>
+                        <li class="nav-item"><a href="{% url 'index' %}" class="nav-link icon d-flex align-items-center"><i>Dashboard</i><span class="d-lg-none ml-2"></span></a></li>
                       <!-- <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i><span class="d-lg-none ml-2">Twitter</span></a></li> -->
                       <!-- <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-instagram"></i><span class="d-lg-none ml-2">Instagram</span></a></li> -->
                         <li class="dropdown nav-item">

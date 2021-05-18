@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block title %}Orders{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+
+{% include "snippets/top.html" %}
+
+<!--Tables-->
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <table class="table bg-white table-responsive-sm">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Products</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Order by</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>aman</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+<!--end table-->
+
+
+{% endblock %}
