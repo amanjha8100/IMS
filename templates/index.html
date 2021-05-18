@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+
+{% block css %}
+<style>
+    .my-card:hover{
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Information
+                </div>
+                <div class="card-body">
+                    <marquee behavior="" direction="">
+                       <h3 class="my-4">This is Inventory management System</h3> 
+                    </marquee>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Statistics
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="">
+                                <div class="card my-card shadow text-center p-3">
+                                    <h4>Staff <i class="fa fa-users"></i></h4>
+                                    <h3>4</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="">
+                                <div class="card my-card shadow text-center p-3">
+                                    <h4>Produts <i class="fa fa-square"></i></h4>
+                                    <h3>4</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="">
+                                <div class="card my-card shadow text-center p-3">
+                                    <h4>Orders <i class="fa fa-truck"></i></h4>
+                                    <h3>4</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Graphs-->
+<div class="container">
+    <div class="row">
+       <div class="col-md-6">
+           
+       </div> 
+    </div>
+</div>
+
+{% endblock %}
