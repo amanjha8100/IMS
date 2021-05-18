@@ -23,9 +23,15 @@ def staff(request):
     return render(request,'staff.html')
 def product(request):
     return render(request,'products.html')
+def order(request):
+    return render(request,'order.html')
+def profile(request):
+    return render(request,'profile.html')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="index"),
     path('staff/',staff,name="staff"),
     path('products/',product,name="product"),
+    path('order/',order,name="order"),
+    path('profile/',profile,name="profile"),
 ]

@@ -1,0 +1,67 @@
+{% extends 'main.html' %}
+
+{% block css %}
+{% load static %}
+<style>
+    body{
+        background-color: rgb(230, 227,227);
+    }
+    .my-card:hover{
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+<!--Tables-->
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Profile
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="h4">Staff Profile Information</span> <a class="btn btn-info btn-sm float-right" href="">Edit</a>
+                            <hr>
+                            <table class="table bg-white table-responsive-sm table-borderless">
+                                            
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Name</th>
+                                    <td>Aman Prakash Jha</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Email</th>
+                                    <td>ap2301@it.jgec.ac.in</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Phone</th>
+                                    <td>7478426468</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Address</th>
+                                    <td>Howrah, West Bengal</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-thumbnail" src="{% static 'profile.jpg' %}" alt=""> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end table-->
+
+
+{% endblock %}
