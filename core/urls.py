@@ -19,7 +19,13 @@ from django.shortcuts import render
 
 def index(request):
     return render(request,'index.html')
+def staff(request):
+    return render(request,'staff.html')
+def product(request):
+    return render(request,'products.html')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="index"),
+    path('staff/',staff,name="staff"),
+    path('products/',product,name="product"),
 ]
