@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+
+{% block title %}Register{% endblock %}
+{% block css %}
+{% load static %}
+{% endblock %}
+{% block content %}
+
+<section class="ftco-section ftco-section-2 section-signup page-header img" style="background-image: url(/static/imgs/bg_2.jpg);">
+    <div class="overlay"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <div class="card card-login py-4 bg-dark">
+        <form class="form-login" method="POST">
+            {% csrf_token %}
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">Register User</h4>
+            <!-- <div class="social-line">
+              <a href="#" class="btn-icon d-flex align-items-center justify-content-center">
+                <i class="ion-logo-facebook"></i>
+              </a>
+              <a href="#" class="btn-icon d-flex align-items-center justify-content-center">
+                <i class="ion-logo-twitter"></i>
+              </a>
+              <a href="#" class="btn-icon d-flex align-items-center justify-content-center">
+                <i class="ion-logo-googleplus"></i>
+              </a>
+            </div> -->
+          </div>
+          <div class="card-body px-4 pb-4 pt-2">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="ion-ios-contact"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username" name="username">
+              {% for err in form.username.errors %}
+                <small class="text-danger">{{err}}</small>
+              {% endfor %}
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="ion-ios-lock"></i>
+                </span>
+              </div>
+              <input type="password" class="form-control" placeholder="Password..." name="password1">
+              {% for err in form.password1.errors %}
+                <small class="text-danger">{{err}}</small>
+              {% endfor %}
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="ion-ios-lock"></i>
+                  </span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password again...." name="password2">
+                {% for err in form.password2.errors %}
+                <small class="text-danger">{{err}}</small>
+                {% endfor %}
+              </div>
+            <div class="form-check">
+                      <label class="custom-control fill-checkbox mb-0">
+                          <input type="checkbox" class="fill-control-input">
+                          <span class="fill-control-indicator"></span>
+                          <span class="fill-control-description">I Agree to the terms and conditions.</span>
+                      </label>
+                    </div>
+          </div>
+          <div class="footer text-center">
+            <!-- <a href="#" type="submit" class="btn btn-white">Register</a> -->
+            <button type="submit" class="btn btn-white">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}
