@@ -53,10 +53,16 @@
                   <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="https://github.com/amanjha8100" target="_blank" class="nav-link icon d-flex align-items-center"><i class="ion-logo-github"></i><span class="d-lg-none ml-2">GitHub</span></a></li>
+                        {% if user.is_authenticated %}
                         <li class="nav-item"><a href="{% url 'index' %}" class="nav-link icon d-flex align-items-center"><i>Dashboard</i><span class="d-lg-none ml-2"></span></a></li>
+                        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link icon d-flex align-items-center"><i>Logout</i><span class="d-lg-none ml-2"></span></a></li>
+                        {% elif %}
+                        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link icon d-flex align-items-center"><i>Login</i><span class="d-lg-none ml-2"></span></a></li>
+                        <li class="nav-item"><a href="{% url 'register' %}" class="nav-link icon d-flex align-items-center"><i>Register</i><span class="d-lg-none ml-2"></span></a></li>
+                        {% endif %}
                       <!-- <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-twitter"></i><span class="d-lg-none ml-2">Twitter</span></a></li> -->
                       <!-- <li class="nav-item"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-logo-instagram"></i><span class="d-lg-none ml-2">Instagram</span></a></li> -->
-                        <li class="dropdown nav-item">
+                        <!-- <li class="dropdown nav-item">
                       <a href="#" class="dropdown-toggle nav-link icon d-flex align-items-center" data-toggle="dropdown">
                         <i class="ion-ios-apps mr-2"></i>
                         Features
@@ -66,7 +72,7 @@
                         <a href="#" class="dropdown-item font-weight-bold text-dark"><i class="ion-ios-add mr-2"></i> Add</a>
                         <a href="#" class="dropdown-item font-weight-bold text-dark"><i class="ion-ios-document mr-2"></i> Logout</a>
                       </div>
-                    </li>
+                    </li> -->
                       <!-- <li class="nav-item cta"><a href="#" class="nav-link icon d-flex align-items-center"><i class="ion-ios-cloud-download mr-2"></i> Download</a></li> -->
                     </ul>
                   </div>
