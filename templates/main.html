@@ -55,6 +55,7 @@
                         <li class="nav-item"><a href="https://github.com/amanjha8100" target="_blank" class="nav-link icon d-flex align-items-center"><i class="ion-logo-github"></i><span class="d-lg-none ml-2">GitHub</span></a></li>
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a href="{% url 'index' %}" class="nav-link icon d-flex align-items-center"><i>Dashboard</i><span class="d-lg-none ml-2"></span></a></li>
+                        <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link icon d-flex align-items-center"><i>Profile</i><span class="d-lg-none ml-2"></span></a></li>
                         <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link icon d-flex align-items-center"><i>Logout</i><span class="d-lg-none ml-2"></span></a></li>
                         {% else %}
                         <li class="nav-item"><a href="{% url 'login' %}" class="nav-link icon d-flex align-items-center"><i>Login</i><span class="d-lg-none ml-2"></span></a></li>

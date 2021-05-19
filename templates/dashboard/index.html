@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% if user.is_authenticated and user.is_staff and user.is_superuser %}
 {% include 'snippets/top.html' %}
 
 <!--Graphs-->
@@ -99,5 +99,7 @@
        </div> 
     </div>
 </div>
-
+{% else %}
+{% include "dashboard/staff-dashboard.html" %}
+{% endif %}
 {% endblock %}
