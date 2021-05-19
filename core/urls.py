@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("dashboard.urls")),
     path('register/',user_view.register,name="register"),
-    path('login/',user_view.loginuser,name="login"),
+    path('',user_view.loginuser,name="login"),
     path('logout/',user_view.logoutuser,name="logout"),
     # path('profile/',profile,name="profile"),
 ]
