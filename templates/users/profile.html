@@ -26,25 +26,25 @@
                                 <tbody>
                                   <tr>
                                     <th scope="row">Name</th>
-                                    <td>Aman Prakash Jha</td>
+                                    <td>{{user.username}}</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">Email</th>
-                                    <td>ap2301@it.jgec.ac.in</td>
+                                    <td>{{user.email}}</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">Phone</th>
-                                    <td>7478426468</td>
+                                    <td>{{user.profile.phone}}</td>
                                   </tr>
                                   <tr>
                                     <th scope="row">Address</th>
-                                    <td>Howrah, West Bengal</td>
+                                    <td>{{user.profile.address}}</td>
                                   </tr>
                                 </tbody>
                               </table>
                         </div>
                         <div class="col-md-4">
-                            <img class="img-thumbnail" src="{% static 'profile.jpg' %}" alt=""> 
+                            <img class="img-thumbnail" src="{{ user.profile.image.url }}" alt=""> 
                         </div>
                     </div>
                 </div>
