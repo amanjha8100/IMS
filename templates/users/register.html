@@ -35,7 +35,8 @@
                   <i class="ion-ios-contact"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Username" name="username">
+              <!-- <input type="text" class="form-control" placeholder="Username" name="username"> -->
+              {{form.username}}
               {% for err in form.username.errors %}
                 <small class="text-danger">{{err}}</small>
               {% endfor %}
@@ -46,7 +47,8 @@
                   <i class="ion-ios-lock"></i>
                 </span>
               </div>
-              <input type="password" class="form-control" placeholder="Password..." name="password1">
+              <!-- <input type="password" class="form-control" placeholder="Password..." name="password1"> -->
+              {{form.password1}}
               {% for err in form.password1.errors %}
                 <small class="text-danger">{{err}}</small>
               {% endfor %}
@@ -57,18 +59,19 @@
                     <i class="ion-ios-lock"></i>
                   </span>
                 </div>
-                <input type="password" class="form-control" placeholder="Password again...." name="password2">
+                <!-- <input type="password" class="form-control" placeholder="Password again...." name="password2"> -->
+                {{form.password2}}
                 {% for err in form.password2.errors %}
                 <small class="text-danger">{{err}}</small>
                 {% endfor %}
               </div>
-            <div class="form-check">
+            <!-- <div class="form-check">
                       <label class="custom-control fill-checkbox mb-0">
                           <input type="checkbox" class="fill-control-input">
                           <span class="fill-control-indicator"></span>
                           <span class="fill-control-description">I Agree to the terms and conditions.</span>
                       </label>
-                    </div>
+                    </div> -->
           </div>
           <div class="footer text-center">
             <!-- <a href="#" type="submit" class="btn btn-white">Register</a> -->

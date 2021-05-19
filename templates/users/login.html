@@ -13,7 +13,8 @@
   <div class="row justify-content-center">
     <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
       <div class="card card-login py-4 bg-dark">
-        <form class="form-login" method="" action="">
+        <form class="form-login" method="POST">
+          {% csrf_token %}
           <div class="card-header card-header-primary text-center">
             <h4 class="card-title">Login</h4>
             <!-- <div class="social-line">
@@ -35,7 +36,7 @@
                   <i class="ion-ios-contact"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Username">
+              <input type="text" class="form-control" placeholder="Username" name="username">
             </div>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -43,18 +44,22 @@
                   <i class="ion-ios-lock"></i>
                 </span>
               </div>
-              <input type="password" class="form-control" placeholder="Password...">
+              <input type="password" class="form-control" placeholder="Password..." name="password">
             </div>
-            <div class="form-check">
+            <!-- <div class="form-check">
                       <label class="custom-control fill-checkbox mb-0">
                           <input type="checkbox" class="fill-control-input">
                           <span class="fill-control-indicator"></span>
                           <span class="fill-control-description">I Agree to the terms and conditions.</span>
                       </label>
-                    </div>
+                    </div> -->
+              {% for message in messages %}
+              <small class="text-danger">{{message}}</small>
+              {% endfor %}
           </div>
           <div class="footer text-center">
-            <a href="#" class="btn btn-white">Login</a>
+            <!-- <a href="#" class="btn btn-white">Login</a> -->
+            <button type="submit" class="btn btn-white">Login</button>
           </div>
         </form>
       </div>
