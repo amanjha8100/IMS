@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
-from . forms import SignUpForm
+from . forms import SignUpForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
@@ -40,3 +40,24 @@ def logoutuser(request):
 
 def profile(request):
     return render(request,"users/profile.html")
+
+def profile_update(request):
+    userform = UserUpdateForm()
+    profileform = ProfileUpdateForm()
+    if request.method == "POST":
+        userform = UserUpdateForm(request.POST, instance=request.user)
+        profileform = ProfileUpdateForm(request.POST,request.FILES, instance=request.user.profile)
+        if userform.is_valid() and profileform.is_valid():
+            userform.save()
+            profileform.save()
+            return redirect('profile')
+        else:
+            return render(request,'users/profile_update.html',{'userform':userform,'profileform':profileform})
+    else:
+        userform = UserUpdateForm(instance=request.user)
+        profileform = ProfileUpdateForm(instance=request.user.profile)
+    context = {
+        'userform':userform,
+        'profileform':profileform,
+    }
+    return render(request,'users/profile_update.html',context)
