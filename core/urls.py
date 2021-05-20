@@ -29,4 +29,4 @@ urlpatterns = [
     path('profile/',user_view.profile,name="profile"),
     path('logout/',user_view.logoutuser,name="logout"),
     # path('profile/',profile,name="profile"),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
