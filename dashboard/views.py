@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from . models import Product
+from .forms import AddProduct
 
 # Create your views here.
 @login_required(login_url='login')
@@ -14,7 +15,8 @@ def staff(request):
 
 @login_required(login_url='login')
 def product(request):
-    return render(request,"dashboard/products.html")
+    form = AddProduct()
+    return render(request,"dashboard/products.html",{'form':form})
 
 @login_required(login_url='login')
 def order(request):

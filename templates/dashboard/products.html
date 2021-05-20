@@ -16,9 +16,14 @@
             <div class="border bg-white p-3">
                 <h4>Add Products</h4>
                 <hr>
-                <form action="">
-                    
-
+                <form method="POST">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    {{form.name}}
+                  </div>
+                  <div class="form-group">
+                    {{form.category}}
+                  </div>
                     <input class="btn btn-success btn-block" type="submit" value="Add Product">
                 </form>
             </div>
