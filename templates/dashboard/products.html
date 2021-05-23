@@ -24,6 +24,9 @@
                   <div class="form-group">
                     {{form.category}}
                   </div>
+                  <div class="form-group">
+                    {{form.quantity}}
+                  </div>
                     <input class="btn btn-success btn-block" type="submit" value="Add Product">
                 </form>
             </div>
@@ -32,7 +35,6 @@
             <table class="table bg-white table-responsive-sm">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Category</th>
                     <th scope="col">Quantity</th>
@@ -40,22 +42,23 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {% for p in product %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.category}}</td>
+                    <td>{{p.quantity}}</td>
                     <td>
                         <a class="btn btn-info btn-sm" href="#"><i class="fa fa-pencil-square-o"></i></a>
-                        <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-trash"></i></a>
+                        {% include 'dashboard/deletemodal.html' %}
+                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-trash"></i></button>
                     </td>
                   </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
     </div>
 </div>
 <!--end table-->
-
 
 {% endblock %}

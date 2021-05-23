@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from . models import Product
 from .forms import AddProduct
@@ -15,9 +15,25 @@ def staff(request):
 
 @login_required(login_url='login')
 def product(request):
+    pro = Product.objects.all()
     form = AddProduct()
-    return render(request,"dashboard/products.html",{'form':form})
+    if request.method == "POST":
+        form = AddProduct(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('product')
+        else:
+            return render(request,"dashboard/products.html",{'form':form,'product':pro})
+    
+    return render(request,"dashboard/products.html",{'form':form,'product':pro})
 
 @login_required(login_url='login')
 def order(request):
     return render(request,"dashboard/order.html")
+
+
+@login_required(login_url='login')
+def dele(request, pk):
+    q = Product.objects.filter(pk=pk)
+    q.delete()
+    return redirect('product')
