@@ -14,12 +14,21 @@
           {% csrf_token %}
           <div class="form-group">
             {{form.name}}
+            {% for err in form.name.errors %}
+            <div class="text-danger small">{{err}}</div>
+            {% endfor %}
           </div>
           <div class="form-group">
             {{form.category}}
+            {% for err in form.category.errors %}
+            <div class="text-danger small">{{err}}</div>
+            {% endfor %}
           </div>
           <div class="form-group">
             {{form.quantity}}
+            {% for err in form.quantity.errors %}
+            <div class="text-danger small">{{err}}</div>
+            {% endfor %}
           </div>
           <div class="form-group">
             <a href="{% url 'product' %}" class="btn btn-secondary">Close</a>
