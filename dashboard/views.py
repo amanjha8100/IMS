@@ -37,3 +37,17 @@ def dele(request, pk):
     q = Product.objects.filter(pk=pk)
     q.delete()
     return redirect('product')
+
+
+@login_required(login_url='login')
+def edit(request, pk):
+    item = Product.objects.get(pk=pk)
+    form = AddProduct(instance=item)
+    if request.method == "POST":
+        form = AddProduct(request.POST,instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect('product')
+        else:
+            return render(request,'dashboard/edit.html',{'form':form})
+    return render(request,'dashboard/edit.html',{'form':form})

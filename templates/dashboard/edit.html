@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block title %}Update Product{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="border bg-white p-3">
+        <h4>Add Products</h4>
+        <hr>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            {{form.name}}
+          </div>
+          <div class="form-group">
+            {{form.category}}
+          </div>
+          <div class="form-group">
+            {{form.quantity}}
+          </div>
+          <div class="form-group">
+            <a href="{% url 'product' %}" class="btn btn-secondary">Close</a>
+            <input class="btn btn-success" type="submit" value="Update">
+        </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
