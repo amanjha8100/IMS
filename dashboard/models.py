@@ -18,10 +18,14 @@ class Product(models.Model):
         verbose_name_plural = 'Product'
         ordering = ['category']
 
+    def __str__(self):
+        return f'{self.name}-{self.category}-{self.quantity}'
+
 class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     staff = models.ForeignKey(User,models.CASCADE,null=True)
     date = models.DateTimeField(auto_now_add=True)
+    oquantity = models.PositiveIntegerField(null=True)
 
     class Meta:
         verbose_name_plural = 'Order'

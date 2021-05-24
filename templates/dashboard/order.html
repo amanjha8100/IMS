@@ -17,21 +17,23 @@
             <table class="table bg-white table-responsive-sm">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Products</th>
                     <th scope="col">Category</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Order by</th>
+                    <th scope="col">Date</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for o in order %}
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>aman</td>
+                    <td>{{o.product.name}}</td>
+                    <td>{{o.product.category}}</td>
+                    <td>{{o.oquantity}}</td>
+                    <td>{{o.staff.username}}</td>
+                    <td>{{o.date}}</td>
                   </tr>
+                  {% endfor %}
                 </tbody>
               </table>
         </div>
