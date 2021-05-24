@@ -25,7 +25,7 @@
                 <tbody>
                   {% for w in staff %}
                   <tr>
-                    <td><a href="#">{{w.username}}</a></td>
+                    <td><a href="{% url 'staffdetail' w.id %}">{{w.username}}</a></td>
                     <td>{{w.email}}</td>
                     <td>{{w.profile.phone}}</td>
                   </tr>

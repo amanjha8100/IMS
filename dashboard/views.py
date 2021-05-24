@@ -21,7 +21,11 @@ def staff(request):
 
 @login_required(login_url='login')
 def staffdetail(request, pk):
-    return render(request, 'dashboard/staffdetail.com')
+    staff = User.objects.get(id=pk)
+    context = {
+        'staff':staff,
+    }
+    return render(request, 'dashboard/staffdetail.html',context)
 
 @login_required(login_url='login')
 def product(request):

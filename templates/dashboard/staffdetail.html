@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+
+{% block title %}Staff{% endblock %}
+
+{% block css %}
+{% load static %}
+{% endblock %}
+
+{% block content %}
+
+{% include "snippets/top.html" %}
+
+<!--Tables-->
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    Profile
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="h4">Staff Profile Information</span> 
+                            <hr>
+                            <table class="table bg-white table-responsive-sm table-borderless">
+                                            
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Name</th>
+                                    <td>{{staff.username}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Email</th>
+                                    <td>{{staff.email}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Phone</th>
+                                    <td>{{staff.profile.phone}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Address</th>
+                                    <td>{{staff.profile.address}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-thumbnail" src="{{staff.profile.image.url}}" alt=""> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end table-->
+
+
+{% endblock %}
