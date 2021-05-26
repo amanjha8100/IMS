@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="card">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-body">
                     <table class="table bg-white">
-                        <thead class="bg-info text-white">
+                        <thead class="bg-dark text-white">
                             <tr>
                                 <th scope="col">Product</th>
                                 <th scope="col">Category</th>
@@ -28,13 +28,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            {% for o in order %}
+                            {% if o.staff == user %}
                             <tr>
-                                <td>aman</td>
-                                <td>Prakash</td>
-                                <td>Jha</td>
+                                <td>{{o.product.name}}</td>
+                                <td>{{o.product.category}}</td>
+                                <td>{{o.oquantity}}</td>
                             </tr>
-                            
+                            {% endif %}
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

@@ -7,7 +7,12 @@ from django.contrib.auth.models import User
 # Create your views here.
 @login_required(login_url='login')
 def index(request):
-    return render(request,'dashboard/index.html')
+    orders = Order.objects.all()
+    # print(orders)
+    context = {
+        'order':orders,
+    }
+    return render(request,'dashboard/index.html',context)
 
 
 @login_required(login_url='login')
