@@ -1,16 +1,17 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from . models import Product, Order
-from .forms import AddProduct
+from .forms import AddProduct, MakeOrder
 from django.contrib.auth.models import User
 
 # Create your views here.
 @login_required(login_url='login')
 def index(request):
     orders = Order.objects.all()
-    # print(orders)
+    form = MakeOrder()
     context = {
         'order':orders,
+        'form':form,
     }
     return render(request,'dashboard/index.html',context)
 
