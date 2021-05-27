@@ -9,6 +9,15 @@ from django.contrib.auth.models import User
 def index(request):
     orders = Order.objects.all()
     form = MakeOrder()
+    if request.method=="POST":
+        form = MakeOrder(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.staff = request.user
+            instance.save()
+            return redirect('index')
+        else:
+            return render(request, 'dashboard/index.html',{'order':orders,'form':form})
     context = {
         'order':orders,
         'form':form,
