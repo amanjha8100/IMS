@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-2">
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="card">
@@ -7,7 +7,13 @@
                 </div>
                 <div class="card-body">
                     <form method="POST">
-                        {{form.as_p}}
+                        <div class="form-group">
+                            {{form.product}}
+                        </div>
+                        <div class="form-group">
+                            {{form.oquantity}}
+                        </div>
+                        
                         <input class="btn btn-info btn-block" type="submit" value="Make Request">
                     </form>
                 </div>
