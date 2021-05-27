@@ -31,4 +31,6 @@ urlpatterns = [
     path('logout/',user_view.logoutuser,name="logout"),
     # path('profile/',profile,name="profile"),
     path('password_reset/',auth_views.PasswordResetView.as_view(),name="password_reset"),
+    path('password_reset_done/',auth_views.PasswordResetDoneView.as_view(),name="password_reset_done"),
+    path('password_reset_confirm/',auth_views.PasswordResetConfirmView.as_view(),name="password_reset_confirm"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
