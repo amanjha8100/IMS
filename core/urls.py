@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.views.generic.base import TemplateView
 from users import views as user_view
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,8 +31,8 @@ urlpatterns = [
     path('profile/update',user_view.profile_update,name="profile-update"),
     path('logout/',user_view.logoutuser,name="logout"),
     # path('profile/',profile,name="profile"),
-    path('password_reset/',auth_views.PasswordResetView.as_view(),name="password_reset"),
-    path('password_reset_done/',auth_views.PasswordResetDoneView.as_view(),name="password_reset_done"),
+    path('password_reset/',auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'),name="password_reset"),
+    path('password_reset_done/',auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'),name="password_reset_done"),
     path('password_reset_confirm/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(),name="password_reset_confirm"),
     path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(),name="password_reset_complete"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
