@@ -10,9 +10,15 @@
                         {% csrf_token %}
                         <div class="form-group">
                             {{form.product}}
+                            {% for err in form.product.errors %}
+                            <div class="text-danger small">{{err}}</div>
+                            {% endfor %}
                         </div>
                         <div class="form-group">
                             {{form.oquantity}}
+                            {% for err in form.oquantity.errors %}
+                            <div class="text-danger small">{{err}}</div>
+                            {% endfor %}
                         </div>
                         
                         <input class="btn btn-info btn-block" type="submit" value="Make Request">

@@ -18,7 +18,7 @@ from django.urls import path,include
 from users import views as user_view
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -30,4 +30,5 @@ urlpatterns = [
     path('profile/update',user_view.profile_update,name="profile-update"),
     path('logout/',user_view.logoutuser,name="logout"),
     # path('profile/',profile,name="profile"),
+    path('password_reset/',auth_views.PasswordResetView.as_view(),name="password_reset"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
