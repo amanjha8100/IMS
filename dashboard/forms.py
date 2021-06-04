@@ -12,6 +12,7 @@ class AddProduct(forms.ModelForm):
         self.fields['name'].widget = forms.TextInput(attrs={'type':'text','id':'name','name':'name','class':'form-control','placeholder':'Product Name'})
         # self.fields['category'].widget = forms.Select(attrs={'class':'form-select'})
         self.fields['quantity'].widget = forms.NumberInput(attrs={'type':'number','class':'form-control','id':'quantity','name':'quantity','placeholder':'Quantity'})
+        self.fields['category'].label = False
 
 class MakeOrder(forms.ModelForm):
     class Meta:
@@ -22,3 +23,4 @@ class MakeOrder(forms.ModelForm):
         super(MakeOrder,self).__init__(*args,**kwargs)
         # self.fields['product'].widget = forms.Select(attrs={'class':'form-control'})
         self.fields['oquantity'].widget = forms.NumberInput(attrs={'type':'number','class':'form-control','id':'quantity','name':'oquantity','placeholder':'Quantity'})
+        self.fields['product'].label = False
